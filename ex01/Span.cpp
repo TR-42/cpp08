@@ -49,7 +49,7 @@ void Span::addNumber(
 	}
 
 	for (
-		std::vector<int>::const_iterator it = this->_vec.begin();
+		std::vector<int>::iterator it = this->_vec.begin();
 		it != this->_vec.end();
 		++it
 	) {
