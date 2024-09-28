@@ -3,6 +3,6 @@
 #include <cstddef>
 
 template <typename T>
-std::size_t easyfind(const T &container, int value);
+typename T::const_iterator easyfind(const T &container, int value);
 
 #include "./easyfind.tpp"

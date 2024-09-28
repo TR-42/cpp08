@@ -1,22 +1,12 @@
 #pragma once
 
+#include <algorithm>
 #include <stdexcept>
 
 #include "./easyfind.hpp"
 
 template <typename T>
-std::size_t easyfind(const T &container, int value)
+typename T::const_iterator easyfind(const T &container, int value)
 {
-	size_t index = 0;
-	for (
-		typename T::const_iterator it = container.begin();
-		it != container.end();
-		++it
-	) {
-		if (*it == value)
-			return index;
-		++index;
-	}
-
-	throw std::runtime_error("Value not found");
+	return std::find(container.begin(), container.end(), value);
 }

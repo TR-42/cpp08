@@ -13,15 +13,12 @@ static void test()
 	v.push_back(2);
 	v.push_back(3);
 
-	std::size_t index = easyfind(v, 2);
+	typename T::const_iterator iter = easyfind(v, 2);
 
-	std::cout << "Index: " << index << std::endl;
+	std::cout << "Iter2: " << &(*iter) << " / " << *iter << std::endl;
 
-	try {
-		index = easyfind(v, 4);
-	} catch (const std::exception &e) {
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
+	iter = easyfind(v, 4);
+	std::cout << "Iter4: " << &(*iter) << " / " << std::boolalpha << (iter == v.end()) << std::endl;
 }
 
 typedef std::vector<int> int_vector;
